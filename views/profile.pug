@@ -1,0 +1,46 @@
+include ./partials/header
+
+div#main-container
+    div#main-layout 
+        div.user-content 
+            div.profile-card
+                div.card-header
+                    div.pics
+                        img(src="/image/avatar.jpg", alt="")
+                    div.name=user.name
+                    div.desc=user.description
+                    div.sm
+                        a(href='' class='fab fa-github')
+                        a(href='' class='fab fa-twitter')
+                        a(href='' class='fab fa-youtube')
+                    if(currentUser.userId === user._id.toString())
+                        a.concat-btn(href='/user/edit/'+ user._id) Edit Profile
+
+                div.card-footer
+                    div.numbers
+                        div.item Posts
+                            span=posts.length
+                        div.line
+                        div.item Comments
+                            span=userComments.length
+                     
+
+
+        div.user-post 
+            each post in posts
+                div.post
+                                div.post-header
+                                    a.post-author
+                                        img(src="/image/avatar.jpg", alt="") 
+                                        div.detail
+                                            div.name=post.user.name
+                                        
+
+                                div.post-title
+                                    a(href='/post/'+post._id)
+                                        p=post.title  
+                                    div.tags 
+                                        for tag in post.tags
+                                            a(href="/tags/"+tag) # #{tag}
+
+        

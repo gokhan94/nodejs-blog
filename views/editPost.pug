@@ -1,0 +1,18 @@
+include partials/header
+
+block content 
+
+div.form-container
+    form(action='/post/edit/' + post.id   method='POST'  onkeydown="return event.key != 'Enter';")
+            
+        input(type="text" name="title" placeholder="Please enter subject title ..." id="titleData" value=post.title) 
+
+
+        textarea#textareaEditor.message(name="content"  placeholder="enter content data")=post.content
+
+ 
+    
+        button(type="submit") Edit Post
+        
+script(type="application/javascript" src= "/tinymce/tinymce.min.js")
+script(type="application/javascript" src='/js/my-tinymce-config.js')

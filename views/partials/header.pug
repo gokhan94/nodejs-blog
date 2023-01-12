@@ -1,0 +1,31 @@
+doctype html 
+html 
+    head 
+        title Index Page
+        link(rel="stylesheet", type="text/css", href="/css/style.css")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer")
+
+    body 
+
+        header 
+            nav.navigation
+              div.container.nav_container
+                a(href='/')
+                    h4 Blog
+                ul.nav_menu
+                 if(userInfo)
+                    li
+                        a.button(href='/post/create') Create Post
+                    li
+                        a(href='/user/'+userInfo.userId) 
+                            span.welcome Welcome, 
+                            span.author @ #{userInfo.name}
+                    li
+                        a.btn-logout(href='/auth/logout') Logout 
+                 else
+                    li
+                        a(href='/') Home
+                    li
+                        a(href='/auth/login') Login
+                    li
+                        a.button(href='/auth') Create Account

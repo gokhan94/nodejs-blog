@@ -1,0 +1,40 @@
+include partials/header
+
+div.container
+                        div#main
+                            div.sidebar-left 
+                                div.widget-info
+                                    h6 Popular Topics
+                                    nav
+                                        ul 
+                                            li 
+                                                <i class="fa-solid fa-house"></i>
+                                                a(href='#') Home 
+                                            li 
+                                                <i class="fa-solid fa-tag"></i>
+                                                a(href='/tags') Tags 
+                                            li 
+                                                <i class="fa-brands fa-bandcamp"></i>
+                                                a(href='#') About 
+                                    hr
+                                    h6 Contatch Support
+                                    p Lorem Ipsum lorem lorem
+
+                                div.widget-tags
+                                
+                                    include widgetTags  
+
+                                    h3 Other
+                                    ul 
+                                        li 
+                                            a(href='#')  
+                                                <i class="fa-solid fa-thumbs-up"></i> Code of Conduct
+                                        li 
+                                            a(href='#')  
+                                                <i class="fa-solid fa-heart"></i> Concat 
+                    
+                            //block content
+                            include allPosts
+
+
+

@@ -1,0 +1,25 @@
+include ./partials/header
+
+block content
+
+div.container
+    div.main-profile
+        div.user-profile
+            h2.setting-for Settings for 
+                a.user-title(href='#') @ #{user.name}
+
+    
+        div.user-edit
+            form(action='/user/edit/' + user._id  method="POST")
+                ul
+                    li
+                        label.profil-title(for="name") Name:
+                        input(type="text" name="name" id="name"  value=user.name) 
+                    li
+                        label.profil-title(for="job") Job:
+                        input(type="text" name="job" id="job"  value=user.job) 
+                    li
+                        label.profil-title(for="description") Description:
+                        textarea(name="description")=user.description
+                    li
+                        button(type="submit") Update User

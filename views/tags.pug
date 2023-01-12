@@ -1,0 +1,10 @@
+include partials/header
+
+div.wrapper-tags
+    h1 Post Tags
+    div.container-tags
+        each tag in tags
+            div.box-tags
+                h3 # #{tag._id}
+                p There are #{tag.count} topics belonging to the ##{tag._id} tag
+                a.btn-tags(href="/tags/"+tag._id) read post 

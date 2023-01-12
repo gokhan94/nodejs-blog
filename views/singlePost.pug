@@ -1,0 +1,86 @@
+include partials/header
+
+block content
+
+            div#main-container
+                div#main-layout 
+                    aside.sidebar_left 
+                        div.voting_actions
+                            div.comments-single
+
+                            div.post-votes 
+                                ul 
+                                    li
+                                        a(href="/post/" + post._id + "/voteUp") 
+                                            <i class="fa-solid fa-arrow-up"></i> 
+                                    li.votes-count
+                                        span=post.vote_count
+                                    li 
+                                        a(href="/post/" + post._id + "/voteDown") 
+                                            <i class="fa-solid fa-arrow-down"></i>
+                        
+                        if (currentUser.userId === post.user._id.toString() || currentUser.role == 'admin')
+                            div.post-edit
+                                ul
+                                    li
+                                        a(href='edit/'+post.id ) Edit
+                                    li
+                                        a(href='delete/'+post.id ) Delete
+                        
+                    main.main-content  
+                                div.content  
+                                    div.post
+                                        div.post-header
+                                            a.post-author(href='/user/'+post.user._id)
+                                                img(src="/image/avatar.jpg", alt="") 
+                                                div.detail
+                                                    div.name=post.user.name
+
+                                        div.post-title
+                                            a(href='')
+                                                p=post.title  
+                                            div.tags 
+                                                for tag in post.tags
+                                                    a(href='/tags/'+tag) # #{tag}
+
+                                        div.post-content !{post.content}
+                                       
+                                        hr
+                                        
+                                        h2 #{comments.length} comments
+                                        div.comments-container
+                                            form(method='POST' action='/comment/' + post.id)
+                                                textarea(name="comment", cols="30", rows="10")  
+                                                button(type="submit") Add Comment 
+
+                                if(comments.length > 0)           
+                                    div.hero
+                                        h2 Comments:
+                                        div.comments-box
+                                            each comment in comments
+                                                div.card
+                                                    div.profile
+                                                        img(src="/image/avatar.jpg", alt="")
+                                                        div.profile-list
+                                                            h3=comment.user.name
+                                                            if(comment.user.job) 
+                                                            p=comment.user.job
+                                                        div.comment-btn
+                                                            if (currentUser.userId === comment.user._id.toString() || currentUser.role == 'admin')
+                                                                a(href='/comment/'+comment.id ) Delete
+                                                    p.comment-desciption=comment.comment
+                            
+                    aside.sidebar_right
+                        div.user_card
+                            img(src="/image/avatar.jpg", alt="")
+                            div.username=post.user.name
+                            div.name #{post.user.role}
+                            if(post.user.description)
+                                div.about 
+                                    p=post.user.description
+                            if(post.user.job)
+                                span.detail
+                                    span.title Job:
+                                    span.position=post.user.job
+
+                            

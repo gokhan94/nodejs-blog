@@ -1,0 +1,24 @@
+include partials/header
+div.main-login
+        div.login
+                header
+                        h5 Welcome Back !
+                        p Login page
+        div.login-content
+                form(action="/auth/login" method="POST")
+                        ul 
+                            li 
+                                label.user-title(for="name") Email: 
+                                input(type="text" name="email" id="email"  required) 
+                            li 
+                                label.user-title(for="password") Password: 
+                                input(type="password" name="password" id="password"  required) 
+                            li
+                                button(type="submit") Login
+                                a.forget-password(href='/auth/forgot-password') 
+                                        <i class="fa-solid fa-lock"></i> Forgot Password
+        div.login-text 
+                p Please register ?
+                        a(href='/auth') Register
+                p &copy; 2022 Gökhan İLERİ
+                

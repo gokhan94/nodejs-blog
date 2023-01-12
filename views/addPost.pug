@@ -1,0 +1,27 @@
+include partials/header
+
+block content 
+
+div.form-container
+    form(method='POST' action='/post/addPost'  onkeydown="return event.key != 'Enter';")
+            
+        input(type="text" name="title" placeholder="Please enter subject title ..." id="titleData") 
+
+        textarea#textareaEditor.message(name="content"  placeholder="enter content data") 
+
+        div.wrapper   
+                div.content
+                    p Press enter tags:
+                    ul#tagsUl
+                        input(type="text" name="tags" id="tags") 
+
+                div.details Remaining number of tags:
+                    span 
+                
+
+    
+        button(type="submit") Add Post
+
+script(type="text/javascript" src='../js/tag.js')
+script(type="application/javascript" src= "/tinymce/tinymce.min.js")
+script(type="application/javascript" src='../js/my-tinymce-config.js')

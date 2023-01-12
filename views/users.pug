@@ -1,0 +1,12 @@
+doctype html 
+html 
+    head 
+        title Hello
+    body 
+        h1 All Users
+        ul
+            each user, i in users 
+                li= user.name
+                    ||
+                    a(href='/user/'+user._id) Profil
+
