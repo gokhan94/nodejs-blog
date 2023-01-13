@@ -61,7 +61,7 @@ form.addEventListener("submit", async (e) =>{
 
      if(tags.length > 1 && titleValue.length > 5){
           // http://localhost:3000/post/addPost
-         // https://nodejs-blog-rouge.vercel.app/
+          // https://nodejs-blog-rouge.vercel.app/
           await fetch('https://nodejs-blog-rouge.vercel.app/post/addPost', {
               method: 'POST',
               headers: { 
@@ -69,12 +69,12 @@ form.addEventListener("submit", async (e) =>{
                'Content-Type': 'application/json'
               },
               body: JSON.stringify({ newTags: tags, title: titleValue, content: contentValue })
-             
          })
          .then(res => res.json())
          .then((data) => {
                if(data){
-                    var url = "http://localhost:3000/"
+                    // "http://localhost:3000/"
+                    var url = "https://nodejs-blog-rouge.vercel.app/"
                     window.location.href = url
                }
          })
