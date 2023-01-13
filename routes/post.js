@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { getAllPost, getPost, addPost, votesUp, voteDown, searchTags, getEditPost, updatePost, deletePost } = require('../controllers/postController')
+const { getAllPost, getPost, postAdd, votesUp, voteDown, searchTags, getEditPost, updatePost, deletePost } = require('../controllers/postController')
 const {authorization} = require('../middleware/authentication')
 
 
@@ -19,7 +19,7 @@ router.get('/:id([0-9a-fA-F]{24})', authorization, getPost)
 // Delete Post
 router.get('/delete/:id([0-9a-fA-F]{24})', authorization, deletePost)
 // Add Post
-router.post('/addPost', authorization, addPost)
+router.post('/addPost', authorization, postAdd)
 // Post votes
 router.get('/:id/voteUp', authorization, votesUp)
 router.get('/:id/voteDown', authorization, voteDown)

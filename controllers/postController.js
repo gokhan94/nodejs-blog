@@ -139,7 +139,7 @@ const voteDown = async (req, res) => {
      res.redirect('/post/'+ productId)
 }
 
-const addPost = async (req, res) => {
+const postAdd = async (req, res) => {
   const newPost = {
      user: req.user.userId,
      tags : req.body.newTags,
@@ -166,7 +166,7 @@ const searchTags = async (req, res) => {
 module.exports = {
     getAllPost,
     getPost,
-    addPost,
+    postAdd,
     votesUp,
     voteDown,
     getEditPost,
