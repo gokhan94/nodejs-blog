@@ -25,12 +25,10 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 
-var corsOptions = {
-  origin: "http://localhost:3000"
-};
 
-app.use(cors(corsOptions))
-app.set('trust proxy', 1)
+
+app.use(cors())
+app.set('trust proxy', '127.0.0.1')
 
 
 // Express json parser
@@ -38,10 +36,6 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 
-app.use((req, res, next) => {
-  res.header({"Access-Control-Allow-Origin": "*"});
-  next();
-}) 
 // Routers Middleware
 app.use('*', checkUser)
 // Routers
