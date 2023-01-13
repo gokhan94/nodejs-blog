@@ -10,9 +10,9 @@ const getAllUsers = async (req, res) => {
 }
 
 const getSingleUserProfile = async (req, res) => {
-
+    //.populate({ path: 'user', select: 'name email'})
     const user  = await User.findById({ _id: req.params.id })
-    const posts = await Post.find({ user: req.params.id }).populate({ path: 'user', select: 'name email'})
+    const posts = await Post.find({ user: req.params.id })
     const userComments = await Comment.find({ user: req.params.id })
 
     if(!user){

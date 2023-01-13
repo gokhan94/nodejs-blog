@@ -30,12 +30,6 @@ div#main-container
             each post in posts
                 div.post
                                 div.post-header
-                                    a.post-author
-                                        img(src="/image/avatar.jpg", alt="") 
-                                        div.detail
-                                            div.name=post.user.name
-                                        
-
                                 div.post-title
                                     a(href='/post/'+post._id)
                                         p=post.title  
