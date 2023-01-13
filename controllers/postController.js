@@ -148,10 +148,11 @@ const addPost = async (req, res) => {
   }
 
   const post = await Post.create(newPost)
+  res.redirect('/')
 
-  if(post){
+  /*if(post){
     res.status(200).json({'message': 'Post created'})
-  }
+  }*/
 
 }
 
