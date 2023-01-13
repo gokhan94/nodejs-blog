@@ -25,8 +25,12 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 
+var corsOptions = {
+  origin: "http://localhost:3000"
+};
 
-app.use(cors())
+app.use(cors(corsOptions))
+
 // Express json parser
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
