@@ -60,12 +60,13 @@ form.addEventListener("submit", async (e) =>{
      var contentValue = tinymce.get("textareaEditor").getContent()
 
      if(tags.length > 1 && titleValue.length > 5){
-          // 'Content-Type': 'application/json'
+         
           await fetch('http://localhost:3000/post/addPost', {
+              mode: 'no-cors',
               method: 'POST',
               headers: { 
                'Accept': 'application/json',
-               'Content-Type':'application/x-www-form-urlencoded'
+               'Content-Type': 'application/json'
               },
               body: JSON.stringify({ newTags: tags, title: titleValue, content: contentValue })
              
