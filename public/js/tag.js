@@ -61,7 +61,7 @@ form.addEventListener("submit", async (e) =>{
 
      if(tags.length > 1 && titleValue.length > 5){
          
-          await fetch('http://localhost:3000/post/addPost', {
+          await fetch('/post/addPost', {
               method: 'POST',
               headers: { 
                'Accept': 'application/json',
