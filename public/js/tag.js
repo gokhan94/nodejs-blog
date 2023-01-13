@@ -62,8 +62,7 @@ form.addEventListener("submit", async (e) =>{
      if(tags.length > 1 && titleValue.length > 5){
           // http://localhost:3000/post/addPost
          // https://nodejs-blog-rouge.vercel.app/
-         const url = "http://localhost:3000/post/addPost"
-          await fetch(url, {
+          await fetch('https://nodejs-blog-rouge.vercel.app/post/addPost', {
               method: 'POST',
               headers: { 
                'Accept': 'application/json',
