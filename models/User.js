@@ -26,11 +26,9 @@ const UserSchema = new mongoose.Schema({
   },
   description: {
     type: String,
-    maxlength: 20,
     default: null,
   },
   job: {
-    maxlength: 20,
     type: String,
     default: null
   },
