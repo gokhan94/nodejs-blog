@@ -147,8 +147,8 @@ const addPost = async (req, res) => {
      content: req.body.content
   }
 
-  const post = await Post.create(newPost)
-  res.redirect('/')
+  await Post.create(newPost)
+  res.json({'msf':"ok"})
 
   /*if(post){
     res.status(200).json({'message': 'Post created'})
