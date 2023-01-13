@@ -60,8 +60,10 @@ form.addEventListener("submit", async (e) =>{
      var contentValue = tinymce.get("textareaEditor").getContent()
 
      if(tags.length > 1 && titleValue.length > 5){
-         
-          await fetch('http://localhost:3000/post/addPost', {
+          // http://localhost:3000/post/addPost
+         // https://nodejs-blog-rouge.vercel.app/
+         const url = "http://localhost:3000/post/addPost"
+          await fetch(url, {
               method: 'POST',
               headers: { 
                'Accept': 'application/json',
