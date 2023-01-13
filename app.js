@@ -4,6 +4,7 @@ const express = require('express')
 const path = require('path')
 const cookieParser = require("cookie-parser")
 const app = express()
+const cors = require('cors')
 
 const {checkUser} = require('./middleware/authentication')
 
@@ -23,6 +24,9 @@ app.use(express.static(path.join(__dirname, 'public')))
 // Pug init
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
+
+
+app.use(cors())
 // Express json parser
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
