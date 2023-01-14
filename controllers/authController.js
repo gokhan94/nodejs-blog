@@ -30,7 +30,7 @@ const register = async (req, res) => {
 
         const verificationEmailToken = crypto.randomBytes(40).toString('hex')
 
-        const origin = 'http://localhost:3000'
+        const origin = 'https://nodejs-blog-rouge.vercel.app'
         const verifyEmail = `${origin}/auth/verify-email/${verificationEmailToken}`;
 
         const message = `<p>Please confirm your email by clicking on the following link : 
