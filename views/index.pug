@@ -4,37 +4,33 @@ div.container
                         div#main
                             div.sidebar-left 
                                 div.widget-info
-                                    h6 Popular Topics
+                                    h6 Site Contents
                                     nav
                                         ul 
                                             li 
                                                 <i class="fa-solid fa-house"></i>
-                                                a(href='#') Home 
+                                                a(href='/') Home 
                                             li 
                                                 <i class="fa-solid fa-tag"></i>
                                                 a(href='/tags') Tags 
                                             li 
                                                 <i class="fa-brands fa-bandcamp"></i>
-                                                a(href='#') About 
+                                                a(href='/post') Posts 
                                     hr
-                                    h6 Contatch Support
-                                    p Lorem Ipsum lorem lorem
+
 
                                 div.widget-tags
                                 
                                     include widgetTags  
 
-                                    h3 Other
+                                    h3 Developer:
                                     ul 
                                         li 
                                             a(href='#')  
-                                                <i class="fa-solid fa-thumbs-up"></i> Code of Conduct
-                                        li 
-                                            a(href='#')  
-                                                <i class="fa-solid fa-heart"></i> Concat 
+                                                <i class="fa-solid fa-copyright"></i>  2023 / Gökhan ILERI
                     
                             //block content
-                            include allPosts
+                            include post
 
 
 

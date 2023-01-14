@@ -37,7 +37,11 @@ const authorization = async (req, res, next) => {
     next();
 
     } catch(e) {
-      return res.redirect('/');
+      res.render('warning', {
+        message: "Please login to view the content.",
+      })
+      
+      //return res.redirect('/');
     }
   }
 

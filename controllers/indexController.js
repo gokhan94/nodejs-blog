@@ -29,13 +29,16 @@ const homePage = async  (req, res) => {
                 _id : 1,
                 title : 1,
                 tags:1,
+                createdAt:1,
                 vote_count:1,
                 comments : "$comments",
                 role : "$users_detail.role",
                 name : "$users_detail.name",
                 userId:"$users_detail._id"
             } 
-        }
+        },
+        { $sort: { "createdAt": -1 } },
+        { $limit: 5 },
       ])
 
       const tags = await Post.distinct("tags")

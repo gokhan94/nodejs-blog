@@ -1,0 +1,43 @@
+include partials/header
+
+div.container
+                        div#main
+                            div.sidebar-left 
+                                div.widget-info
+                                    h2 All Topics
+                                    hr
+
+                            div.content  
+                                each post in posts
+                                    div.post
+                                        div.post-header
+                                            a.post-author(href='/user/' + post.userId)
+                                                img(src="/image/avatar.jpg", alt="") 
+                                                div.detail
+                                                    div.name=post.name
+
+                                        div.post-title
+                                            a(href='post/'+ post._id)
+                                                p=post.title 
+                                            div.tags 
+                                            
+                                                for tag in post.tags
+                                                    a(href="/tags/"+tag) # #{tag}
+                                            
+                                        
+                                        div.story 
+                                            a(href='#')  
+                                                <i class="fa-solid fa-heart"></i> #{post.vote_count} Like
+                                            a(href='#')  
+                                                <i class="fa-brands fa-discourse"></i> #{post.comments.length} Comment 
+
+                                    br
+                                    
+ 
+
+
+
+                    
+                        
+
+

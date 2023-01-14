@@ -36,7 +36,7 @@ const posts = await Post.aggregate([
   }
 ])
   
-  res.render('allPosts', {
+  res.render('posts', {
       title: "post",
       posts: posts
   })

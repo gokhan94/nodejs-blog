@@ -4,7 +4,7 @@ const { getAllPost, getPost, postAdd, votesUp, voteDown, searchTags, getEditPost
 const {authorization} = require('../middleware/authentication')
 
 
-//router.get('/' , getAllPost)
+router.get('/' , getAllPost)
 
 router.get('/create', authorization, (req, res) => {
     res.render('addPost', {

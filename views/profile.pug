@@ -36,5 +36,10 @@ div#main-container
                                     div.tags 
                                         for tag in post.tags
                                             a(href="/tags/"+tag) # #{tag}
+                                div.story 
+                                    a(href='#')  
+                                        <i class="fa-solid fa-heart"></i> #{post.vote_count} Like
+                                     
+                                     
 
         

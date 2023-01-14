@@ -21,7 +21,9 @@ user: {
     ref: 'User',
     required: true,
   },
-})
+}, 
+{ timestamps: true },
+)
 
 // Deletion of comments on the post
 PostSchema.virtual('comments', {
