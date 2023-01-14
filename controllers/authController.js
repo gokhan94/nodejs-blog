@@ -106,8 +106,9 @@ if(user){
 
     // new create hash password
     const hashPassword = crypto.randomBytes(40).toString('hex')
-
-    const origin = 'http://localhost:3000'
+    // 'https://nodejs-blog-rouge.vercel.app'
+    // 'http://localhost:3000'
+    const origin = 'https://nodejs-blog-rouge.vercel.app'
 
     const resetURL = `${origin}/auth/reset-password?token=${hashPassword}&email=${email}`
 
